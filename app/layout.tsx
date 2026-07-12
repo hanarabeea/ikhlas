@@ -18,19 +18,19 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mahmoud_farah.digitivaa.com"),
+  metadataBase: new URL("https://hamad-ikhlas.digitivaa.com"),
   title: "Ikhlas & Hamad - Wedding Celebration",
   description: "Join us in celebrating Ikhlas & Hamad's wedding",
   generator: "Digitiva",
   openGraph: {
-    url: "https://mahmoud_farah.digitivaa.com/",
+    url: "https://hamad-ikhlas.digitivaa.com/",
     type: "website",
     siteName: "Ikhlas & Hamad Wedding",
     title: "Ikhlas & Hamad - Wedding Celebration",
     description: "Join us in celebrating Ikhlas & Hamad's wedding",
     images: [
       {
-        url: "https://mahmoud_farah.digitivaa.com/invitation-design.png?t=20241220v2",
+        url: "https://hamad-ikhlas.digitivaa.com/invitation-design.png?t=20241220v2",
         width: 768,
         height: 1365,
         alt: "Ikhlas & Hamad Wedding Invitation",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ikhlas & Hamad - Wedding Celebration",
     description: "Join us in celebrating Ikhlas & Hamad's wedding",
-    images: ["https://mahmoud_farah.digitivaa.com/invitation-design.png?t=20241220"],
+    images: ["https://hamad-ikhlas.digitivaa.com/invitation-design.png?t=20241220"],
   },
   icons: {
     icon: "/invitation-design.png",
@@ -66,12 +66,12 @@ export default function RootLayout({
           - Current: 768x1365px (portrait) - may work but not optimal
           - Format: PNG or JPEG (not WebP)
         */}
-        <meta property="og:url" content="https://mahmoud_farah.digitivaa.com/" />
+        <meta property="og:url" content="https://hamad-ikhlas.digitivaa.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Ikhlas & Hamad - Wedding Celebration" />
         <meta property="og:description" content="Join us in celebrating Ikhlas & Hamad's wedding" />
-        <meta property="og:image" content="https://mahmoud_farah.digitivaa.com/invitation-design.png?t=20241220v2" />
-        <meta property="og:image:secure_url" content="https://mahmoud_farah.digitivaa.com/invitation-design.png?t=20241220v2" />
+        <meta property="og:image" content="https://hamad-ikhlas.digitivaa.com/invitation-design.png?t=20241220v2" />
+        <meta property="og:image:secure_url" content="https://hamad-ikhlas.digitivaa.com/invitation-design.png?t=20241220v2" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="768" />
         <meta property="og:image:height" content="1365" />
@@ -83,7 +83,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Ikhlas & Hamad - Wedding Celebration" />
         <meta name="twitter:description" content="Join us in celebrating Ikhlas & Hamad's wedding" />
-        <meta name="twitter:image" content="https://mahmoud_farah.digitivaa.com/invitation-design.png?t=20241220v2" />
+        <meta name="twitter:image" content="https://hamad-ikhlas.digitivaa.com/invitation-design.png?t=20241220v2" />
 
         {/* Preload PNG with high priority to eliminate lag on Netlify */}
         <link
