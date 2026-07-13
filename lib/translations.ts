@@ -97,8 +97,8 @@ export const translations: Translations = {
     ar: '٨:٠٠ مساءً',
   },
   location: {
-    en: 'Almasa Hotel, Nasr City, Cairo',
-    ar: 'فندق الماسة، مدينة نصر، القاهرة',
+    en: 'Andalusite Ballroom, Gate A, Almasa Hotel, Nasr City, Cairo',
+    ar: 'قاعة الأندلسيت، بوابة A، فندق الماسة، مدينة نصر، القاهرة',
   },
   rsvpTitle: {
     en: 'Will You Join Us?',

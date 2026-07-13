@@ -10,7 +10,7 @@ import { Variants } from "framer-motion"
 import { useTranslation } from "@/lib/translations"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { Button } from "@/components/ui/button"
-import RSVPSection from "@/components/rsvp-section"
+import PhotoUploadSection from "@/components/photo-upload-section"
 
 // Format date in Arabic or English
 const formatDate = (date: Date, locale: string) => {
@@ -216,11 +216,11 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
       const staticImg = new window.Image();
       staticImg.src = "/invitation-design.png";
       staticImg.onload = () => {
-        console.log('âœ… Image preloaded and cached');
+        console.log('Image preloaded and cached');
         setGifPreloaded(true);
       };
       staticImg.onerror = () => {
-        console.log('âڑ ï¸ڈ Image preload failed');
+        console.log('Image preload failed');
       };
     }
 
@@ -234,7 +234,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
 
   useEffect(() => {
     if (introFinished) {
-      console.log('ًںژ¬ Intro finished, showing image');
+      console.log('Intro finished, showing image');
       setGifHasPlayed(true);
     }
   }, [introFinished]);
@@ -245,7 +245,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
   }
 
   const handleGifError = () => {
-    console.log('â‌Œ Image error');
+    console.log('Image error');
     setGifHasPlayed(true);
   }
 
@@ -315,7 +315,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
         >
           <div className="bg-background/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-accent/30 group-hover:border-accent/50 transition-colors">
             <span className="text-base md:text-lg text-foreground font-medium tracking-wide">
-              {language === 'ar' ? 'ظ…ط±ط± ظ„ظ„ط£ط³ظپظ„' : 'Scroll Down'}
+              {language === 'ar' ? 'مرر للأسفل' : 'Scroll Down'}
             </span>
           </div>
           <motion.div
@@ -518,7 +518,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  {t('location').split(/[,طŒ]\s*/)[0]}
+                  {t('location').split(/[,،]\s*/).slice(0, 3).join(', ')}
                 </motion.h3>
                 <motion.p
                   className="font-luxury text-xl md:text-2xl text-muted-foreground mb-8 italic"
@@ -527,7 +527,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  {t('location').split(/[,طŒ]\s*/).slice(1).join(', ')}
+                  {t('location').split(/[,،]\s*/).slice(3).join(', ')}
                 </motion.p>
 
                 {/* Divider Line */}
@@ -556,7 +556,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <p className="font-luxury text-xl md:text-2xl text-foreground font-medium text-center">
+                    <p className="font-luxury text-2xl md:text-3xl text-foreground font-medium text-center">
                       {formattedDate}
                     </p>
                   </motion.div>
@@ -576,7 +576,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <p className="font-luxury text-xl md:text-2xl text-foreground font-medium text-center">
+                    <p className="font-luxury text-2xl md:text-3xl text-foreground font-medium text-center">
                       {formattedTime}
                     </p>
                   </motion.div>
@@ -593,30 +593,34 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
             >
               <VenueMap />
             </motion.div>
-
-            {/* Gift Note */}
-            <motion.div
-              className="text-center max-w-2xl mx-auto py-10 px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <p className="font-luxury text-xl md:text-2xl text-foreground italic leading-relaxed">
-                {t('giftNote')}
-              </p>
-            </motion.div>
-
           </div>
 
         </div>
       </motion.section>
 
+      {/* Gift Note Section - centered between Venue and Message sections */}
+      <section className="relative py-16 px-4 flex justify-center">
+        <motion.div
+          className="relative max-w-2xl w-full mx-auto bg-gradient-to-br from-card/95 via-card/90 to-accent/10 backdrop-blur-sm border-4 border-accent/40 p-8 md:p-10 shadow-2xl text-center"
+          initial={{ opacity: 0, y: 20, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          style={{
+            clipPath: 'polygon(8% 0%, 92% 0%, 100% 8%, 100% 92%, 92% 100%, 8% 100%, 0% 92%, 0% 8%)',
+          }}
+        >
+          <p className="font-luxury text-xl md:text-2xl text-foreground italic leading-relaxed">
+            {t('giftNote')}
+          </p>
+        </motion.div>
+      </section>
+
       {/* Message Section */}
       <HandwrittenMessage />
 
-      {/* RSVP Section */}
-      <RSVPSection />
+      {/* Photo Upload Section */}
+      <PhotoUploadSection />
 
       {/* Footer */}
       <motion.footer

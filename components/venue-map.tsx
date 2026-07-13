@@ -87,11 +87,15 @@ export default function VenueMap() {
             <div className="text-muted-foreground text-sm sm:text-base mb-3 space-y-1">
               {isRTL ? (
                 <>
+                  <div>قاعة الأندلسيت</div>
+                  <div>بوابة A</div>
                   <div>مدينة نصر</div>
                   <div>القاهرة</div>
                 </>
               ) : (
                 <>
+                  <div>Andalusite Ballroom</div>
+                  <div>Gate A</div>
                   <div>Nasr City</div>
                   <div>Cairo</div>
                 </>
