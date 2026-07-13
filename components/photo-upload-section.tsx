@@ -4,7 +4,6 @@ import { motion, Variants } from "framer-motion"
 import { useTranslation } from "@/lib/translations"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import { Camera, Upload } from "lucide-react"
 
 // Professional animation variants matching the main page
@@ -77,7 +76,8 @@ export default function PhotoUploadSection() {
   const t = useTranslation()
   const { language } = useLanguage()
 
-  const driveLink = "https://drive.google.com/drive/folders/1t6IbaEjAke_8VEipWQdgckbPgWvY-34l"
+  const driveLink = "https://drive.google.com/drive/folders/1HIILJ0gVFlV0wgsqV0fkKY04fgDrXO7x"
+  const qrCodeSrc = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(driveLink)}`
 
   const handleUploadClick = () => {
     window.open(driveLink, "_blank")
@@ -188,8 +188,9 @@ export default function PhotoUploadSection() {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <div className="bg-white p-6 rounded-2xl shadow-lg mb-6 border-2 border-accent/10">
-                  <Image
-                    src="/qr-code-img.png"
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={qrCodeSrc}
                     alt="QR Code"
                     width={200}
                     height={200}
