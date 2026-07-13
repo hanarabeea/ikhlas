@@ -512,7 +512,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
 
                 {/* Venue Name */}
                 <motion.h3
-                  className="font-elegant text-4xl md:text-5xl lg:text-6xl text-foreground mb-2 tracking-wide"
+                  className="font-elegant text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 tracking-wide"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
